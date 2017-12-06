@@ -1,5 +1,6 @@
 ---
 title: Home
+nav_include: 1
 ---
 
 >here is a quote
