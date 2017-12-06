@@ -1,6 +1,6 @@
 ---
 title: Data Sources
-nav_include: 2
+nav_include: 1
 ---
 
 We used **three** primary sources for our project. For all sources, we gathered data for the years **2006 - 2016**. Observational unit for study was **Metropolitan Statistical Area (MSA).** An MSA is defined to be a geographical area with high population density.

@@ -1,6 +1,6 @@
 ---
 title: Data Challenges & Merging
-nav_include: 3
+nav_include: 2
 ---
 
 Listed below are the gaps that we've identified in the extracted data, alongside the design decisions we made for re-formatting
