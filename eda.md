@@ -2,6 +2,7 @@
 title: Exploratory Data Analysis
 nav_include: 3
 ---
+This section describes the findings from the exploratory data analysis phase.
 
 ### Part 1. Examining Data Completeness by Year###
 
