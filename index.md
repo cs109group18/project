@@ -11,4 +11,6 @@ Murders and man-slaughter are proving to be a rising concern in all metropolitan
 
 Socio-economic variables **do not** have a lot of influence on crime prediction.
 
+Tools and Technologies used
 
+Disclaimer: Detailed Python code can be found elsewhere.
