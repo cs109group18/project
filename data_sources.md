@@ -3,8 +3,6 @@ title: Data Sources
 nav_include: 2
 ---
 
-## Data Sources
-
 We used **three** primary sources for out project. For all of our sources, we gathered data for the years **2006 - 2017**. Our observational unit was **Metropolitan Statistical Area (MSA).** An MSA is defined to be a geographical area with high population density.
 
 ### Data Source 1: FBI Uniform Crime Reporting (UCR) Program
