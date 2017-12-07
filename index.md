@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Murder Prediction
 ---
 
 >Building a predictive model to estimate murder in Metropolitan Statistical Areas (MSA’s) within continental United States
