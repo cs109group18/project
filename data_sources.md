@@ -7,7 +7,7 @@ We used **three** primary sources for our project. For all sources, we gathered 
 
 ### 1. FBI Uniform Crime Reporting (UCR) Program ###
 
-We **automated** the extraction murders and man-slaughter data from the FBI database for the years 2006 - 2016.**Table 1** lists the features provided in the FBI database.
+We **automated** the extraction of murders and man-slaughter data from the FBI database for the years 2006 - 2016.**Table 1** lists the features provided in the FBI database.
 
 <center> Table 1: List of Crime Variables from FBI  </center>
 
@@ -65,12 +65,12 @@ We obtained demographic data for each MSA from the USCB.  We used our EDA (Explo
 | male_pov | povery_rate among males | S1701
 | female_pov | poverty_rate among females  | S1701
 
-We selected these variables because data were widely available (by year and by MSA) and we wanted to try to collect a range of economic, gender, racial, and age features to get a diverse array of variables about an MSA.
+We selected these variables because data was widely available (by year and by MSA) and we wanted to try to collect a range of economic, gender, racial, and age features to get a diverse array of variables about an MSA.
 
 *URL: https://factfinder.census.gov/*
 
 ### 3. Bureau of Economic Analysis (BEA) ###
 
-The data on income from UCSB were mostly missing and thus unusable.  Instead, we looked to the BEA which provided **real per-capita GDP**, that measures an MSA aggregate economic activity.  The reason we chose real per-capita GDP are two-fold. Per-capita GDP is better than GDP for our purposes because it adjusts for population. Otherwise, larger MSA will always have larger GDP due to more people and resources. Secondly, real per capita GDP was chosen to control for inflation. Our GDP measure is in 2005 dollars for all years so that comparisons between years is due to actual changes rather than inflation
+Income data from UCSB was mostly missing and thus unusable.  Instead, we looked to the BEA which provided **real per-capita GDP**, that measures an MSA aggregate economic activity.  The reason we chose real per-capita GDP are two-fold. Per-capita GDP is better than GDP for our purposes because it adjusts for population. Otherwise, larger MSA will always have larger GDP due to more people and resources. Secondly, real per capita GDP was chosen to control for inflation. Our GDP measure is in 2005 dollars for all years so that comparisons between years is due to actual changes rather than inflation
 
 *URL: https://www.bea.gov/iTable/iTable.cfm?ReqID=70#reqid=70&step=1&isuri=1&7003=1000&7004=naics&7035=-1&7005=1&7006=xx&7001=21000&7036=-1&7002=2&7090=70&7007=-1&7093=levels*
