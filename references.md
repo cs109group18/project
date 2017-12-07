@@ -12,5 +12,5 @@ nav_include: 7
 
 4. LaFree, G. (1999). Declining violent crime rates in the 1990s: Predicting crime booms and busts. *Annual Review of Sociology* 25(1), 145-168.
 
-Dietterich, T. (2002). Machine learning for sequential data: A review. *Structural, syntactic, and statistical pattern recognition*, 227-246.
+5. Dietterich, T. (2002). Machine learning for sequential data: A review. *Structural, syntactic, and statistical pattern recognition*, 227-246.
 
