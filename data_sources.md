@@ -9,7 +9,7 @@ We used **three** primary sources for our project. For all sources, we gathered 
 
 We **automated** the extraction murders and man-slaughter data from the FBI database for the years 2006 - 2016.**Table 1** lists the features provided in the FBI database.
 
-<center> ** Table 1: List of Crime Variables from FBI ** </center>
+<center> Table 1: List of Crime Variables from FBI  </center>
 
 |          Name          |
 |:--------------------------------|
@@ -33,7 +33,7 @@ The crime variables listed in Table 1 were available in three separate forms: Nu
 
 We obtained demographic data for each MSA from the USCB.  We used our EDA (Exploratory Data Analysis), intuition, and the provided Glaeser paper to identify the features in scope. **Table 2** list the names, definitions, and table numbers for which we got census data.
 
-<center> ** Table 2: Census Features Pulled for our analysis ** </center>
+<center> Table 2: Census Features Pulled for our analysis </center>
 
 
 |          Feature Name          | Feature Definition | USCB Table Number |
