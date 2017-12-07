@@ -7,7 +7,7 @@ We used **three** primary sources for our project. For all sources, we gathered 
 
 ### 1. FBI Uniform Crime Reporting (UCR) Program ###
 
-We **automated** the extraction murders and man-slaughter data from the FBI database for the years 2006 - 2017.**Table 1** lists the features provided in the FBI database.
+We **automated** the extraction murders and man-slaughter data from the FBI database for the years 2006 - 2016.**Table 1** lists the features provided in the FBI database.
 
 <center> ** Table 1: List of Crime Variables from FBI ** </center>
 
