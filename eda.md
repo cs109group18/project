@@ -1,7 +1,6 @@
----
-title: Exploratory Data Analysis
-nav_include: 3
----
+
+# Exploratory Data Analysis
+
 This section describes the findings from the exploratory data analysis phase.
 
 ### Part 1. Examining Data Completeness by Year###
@@ -68,7 +67,7 @@ print('Figure 2 - Distribution Comparisons - MSAs with 11 years vs MSAs without 
 ![png](eda_files/eda_5_1.png)
 
 
-We also examined the distribution of states between MSA with full years against MSAs with 11 than 11 years of data.  Based on the plots in Figure 3 there is no clear sytematic difference between those that have 11 and those that do not. Because our rolling window cross validation needs lots of years, **we are going to scope our analysis those MSAs that have all 11 years**
+We also examined the distribution of states between MSA with full years against MSAs with 11 than 11 years of data.  Based on the plots in Figure 3 there is no clear sytematic difference between those that have 11 and those that do not. Looking below, you can see that there is a small geographic difference with larger states like California more heavily represented with all 11 years. This difference is important to note, but eliminating it would require us to do no dropping, which would eliminate our ability to do a full rolling window cross valdation. Since rolling window cross validation needs a lot of years, and there are no large sytematic differences, we have decided  **to limit our analysis those MSAs that have all 11 years**
 
 
 
@@ -125,21 +124,21 @@ We could see a strong positive association between number of murders and populat
 
 
 ```python
-fig, ax = plt.subplots(1,1, figsize=(10,7))
-"""
+fig, ax = plt.subplots(1,2, figsize=(20,6))
+
 x_y_scatter(final_df['msa_pop'],
            final_df['violent_crime'],
            x_label='Population (millions)',
            y_label='# of Violent Crimes',
            title='Violent Crimes vs Population',
            ax=ax[0])
-"""
+
 x_y_scatter(final_df['msa_pop'],
            final_df['mur_mans'],
            x_label='Population (millions)',
            y_label='# Murders and Man-slaughter',
            title='Murders and Man-slaughter vs Population',
-           ax=ax)
+           ax=ax[1])
 ```
 
 
@@ -241,7 +240,6 @@ x_y_scatter(final_df['median_age'],
 ![png](eda_files/eda_18_0.png)
 
 
-
 ### Part 3. Murder Rate Evaluation by MSA, State and Year###
 
 **MSA**
@@ -289,7 +287,7 @@ plt.savefig('State_vs_Avg_Crime_rate', bbox_inches='tight')
 
 **Years**
 
-On an average, all years seem to have a consistent crime rate. However, it is interesting to see a dip for 2010 and again in 2013. This dip attributes to missing data for these years.
+On an average, all years seem to have a consistent crime rate. Interesting there is not an temporal increasing trend
 
 
 
