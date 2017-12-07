@@ -20,14 +20,13 @@ main,
 menu,
 nav.group {
 	display: block;
-	background-color: maroon;
+	background-color: white;
 	height: 25px;
-	opacity:0.5px
 }
 
 header {
 	display: block;
-	background-color: #d7dbe5;
+	background-color: gainsboro;
 	height: 50px;
 	font-family: 'Barlow Semi Condensed', sans-serif;
 	font-size: 30px;
@@ -266,7 +265,7 @@ body {
 }
 
 a {
-	color: white;
+	color: black;
 	text-decoration: none;
 	font-family: 'Barlow Semi Condensed', sans-serif;
 	text-align: center
@@ -284,6 +283,13 @@ a:active {
 	text-decoration: underline;
 	font-family: 'Barlow Semi Condensed', sans-serif;
 	background-color: white
+}
+
+a:select {
+	color: black;
+	text-decoration: none;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	background-color: gainsboro
 }
 
 b,
