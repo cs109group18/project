@@ -4,7 +4,7 @@ nav_include: 4
 ---
 We first decided that a variable needed to be there **> 75%** of the time for us to impute it. The threshold of 75% or greater was set to obtain realistic, reliable and complete imputations. Heursitics and the findings from EDA drove the design of our imputation strategy. We thought that the best way to impute data is to use **a simple linear interpolation by MSA**. This approach attempts to take advantage of the fact that a variable should be highly related to itself in the past and future within the MSA.
 
-We designed two approaches and evaluated the efficacy using the downstream performance -
+We ran each of the imputation strategies over our data and compared downstream model performance. Imputation Strategy # 1 yielded higher test set performances on average, so this became our default.
 
 ### Approach 1
 
