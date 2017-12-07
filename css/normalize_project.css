@@ -270,10 +270,10 @@ a {
 }
 
 a:hover {
-	color: white;
+	color: maroon;
 	text-decoration: none;
 	font-family: 'Barlow Semi Condensed', sans-serif;
-	background-color: crimson
+	background-color: white
 }
 
 a:active {
