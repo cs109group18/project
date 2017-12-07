@@ -66,12 +66,13 @@ a {
 	color: black;
 	padding: 0
 }
-
+/*
 a:active,
 a:hover {
 	outline-width: 0;
 	color: white
 }
+*/
 
 abbr[title] {
 	border-bottom: none;
