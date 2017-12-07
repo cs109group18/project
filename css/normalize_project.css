@@ -61,7 +61,8 @@ template,
 a {
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
-	color: black
+	color: black;
+	padding: 0
 }
 
 a:active,
