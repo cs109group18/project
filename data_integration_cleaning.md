@@ -22,6 +22,6 @@ We created custom tables at the M.S.A level from the census database and extract
 
 * Around 4% of MSA descriptions differed from what we obtained from the FBI Database. These cases were manually updated.  
 
-** Lack of Data for Puerto Rico**
+**Lack of Data for Puerto Rico**
 
 All the MSAs within Puerto Rico had less than 11 years of crime and census data. 40% of them had only 5 years worth of information. Due to lack of data, we decided to narrow down our prediction scope to continental United States.
