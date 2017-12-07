@@ -1,3 +1,7 @@
+---
+title: Exploratory Data Analysis
+nav_include: 3
+---
 
 # Exploratory Data Analysis
 
