@@ -22,7 +22,7 @@
 		</header>
 		<nav class="group">
 			{% if site.title and site.title != page.title %}
-			<a href="{{ " / " | absolute_url }}">Home</a>
+			<a href="https://cs109group18.github.io/project/">Home</a>
 			<!--a href="{{ "/" | absolute_url }}">{{ site.title }}</a-->
 			{% endif %} {% assign navigation_pages = site.html_pages | sort: 'nav_include' %} {% for node in navigation_pages %} {% if node.nav_include %} {% if page.url == node.url %} &nbsp;|&nbsp;
 			<a class="active" href="{{node.url | prepend: site.baseurl}}" class="active">{{node.title}}</a> {% else %} &nbsp;|&nbsp;
