@@ -22,6 +22,7 @@ nav.group {
 	display: block;
 	background-color: maroon;
 	height: 25px;
+	opacity:0.5px
 }
 
 header {
