@@ -22,4 +22,4 @@ There were several key shortcomings to this project. First, we **restricted our 
 
 ## Future Work
 
-We would like to include additional state-level features, such as average annual temperature, state-level gun restrictions, legalization of marijuana, availability of police stations etc.
+We would like to include additional state-level features, such as average annual temperature, state-level gun restrictions, legalization of marijuana, availability of police stations etc in our study.
