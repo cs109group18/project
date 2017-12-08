@@ -16,10 +16,15 @@ The Baseline (Auto-Regression) model has a clear downward trend which makes sens
 
 ## Strengths and Shortcomings
 
-The key strengths in this project were the **wide variety of socioeconomic and demographic features** that we collected for an MSA was available across our entire panel. Furthermore, by **tuning multiple models on different training year ranges**, we got really strong evidence of which models worked best on different year ranges which helped us compare models and test how many training years that you need.
+The key strengths in this project were the **wide variety of socioeconomic and demographic features** that we collected for an MSA were available across our entire panel. Furthermore, by **tuning multiple models on different training year ranges**, we got really strong evidence of which models worked best on different year ranges which helped us compare models and test how many training years that you need.
 
-There were several key shortcomings to this project. First, we **restricted our analysis to only the continental United States**. While this was our interest group, we were still disappointed by the low data availability for Puerto Rico which forced us to de-scope it from our study. Secondly,  we read a paper that talked about **physical characteristics (number of parks within an MSA, land area etc) being more predictive of murder than socioeconomic data.** However, we could not find any data at the MSA level. 
+There were several key shortcomings to this project. First, we **restricted our analysis to only the continental United States**. While this was our primary interest, we were still disappointed by the low data availability for Puerto Rico which forced us to remove it from our study. Secondly,  we read a paper that talked about **physical characteristics (number of parks within an MSA, land area etc) being more predictive of murder than socioeconomic data.** However, we could not find any data at all. Additionally, the census data provided a margin of error for each variable. We did not use this in our study.  
 
 ## Future Work
 
-We would like to include additional state-level features, such as average annual temperature, state-level gun restrictions, legalization of marijuana, availability of police stations etc in our study.
+If we had additional time, we would adjust the crime variables using the margin of error provided in the census data.
+
+We would also like to include additional state-level features, such as average annual temperature, state-level gun restrictions, legalization of marijuana, availability of police stations etc in our study.
+
+We would like to invest more time in the creation of an emsemble prediction model for time series data.
+
