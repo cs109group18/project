@@ -65,7 +65,7 @@ print('Figure 2 - Distribution Comparisons - MSAs with 11 years vs MSAs without 
 ![png](eda_files/eda_5_1.png)
 
 
-We also examined the distribution of states between MSA with full years against MSAs with less than 11 years of data foe **all** features (Only few shown here).  Based on the plots in Figure 3 there is no clear sytematic difference between those that have 11 and those that do not. Looking below, you can see that there is a small geographic difference with larger states like California more heavily represented with all 11 years. This difference is important to note, but eliminating it would require us to do no dropping, which would eliminate our ability to do a full rolling window cross valdation. Since rolling window cross validation needs a lot of years, and there are no large sytematic differences, we have decided  **to limit our analysis those MSAs that have all 11 years**
+We also examined the distribution of states between MSA with full years against MSAs with less than 11 years of data for **all** features (Only few shown here).  Based on the plots in Figure 3 there is no clear sytematic difference between those that have 11 and those that do not. Looking below, you can see that there is a small geographic difference with larger states like California more heavily represented with all 11 years. This difference is important to note, but eliminating it would require us to do no dropping, which would eliminate our ability to do a full rolling window cross valdation. Since rolling window cross validation needs a lot of years, and there are no large sytematic differences, we have decided  **to limit our analysis those MSAs that have all 11 years**
 
 
 
