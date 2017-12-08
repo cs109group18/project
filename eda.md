@@ -262,7 +262,7 @@ ax.set_ylabel('Total Violent Crimes',fontsize=14);
 
 **State**
 
-**California** has the highest average crime rate across all 11 years.
+**Louisiana** has the highest average crime rate across all 11 years.
 
 
 
