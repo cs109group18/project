@@ -109,4 +109,4 @@ for x, height in enumerate(bar_errors):
 plt.show()
 ```
 
-![png](models_files/models_16_0.png)
+![png](models_files/models_14_0.png)
