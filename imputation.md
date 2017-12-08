@@ -26,7 +26,7 @@ If the variable has missing values for all past years before year t, the abovesa
  
  $$Y_t = Y_{t-n/t+n} * \frac{Pop_t}{Pop_{t-n/t+n}} $$
 
-In this second approach, we will do simple population adjustment using the nearest available year. Here, n represents the number of missing periods we have to go to find the first non-missing data. First, we will go to **first** lag period (one year before). If that is missing, we will go to year after. If data is missing for the nearest years (both lag and lead), we then identify two years before the year in question. If that is missing, we attempt an interpolation using the two years after.
+In this second approach, we will do simple population adjustment using the nearest available year. Here, n represents the number of missing periods we have to go to find the first non-missing data. First, we will go to **first** lag period (one year before). If that is missing, we will go to year after. If data is missing for the nearest years (both lag and lead), we then identify two years before the year in question. If that is missing, we attempt an interpolation using the two years after, etc.
 
 ### Imputation of Carson City Data
 
