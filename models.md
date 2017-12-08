@@ -333,7 +333,4 @@ for x, height in enumerate(bar_errors):
 plt.show()
 ```
 
-
-** Best Model - Test set performance **
 ![png](models_files/models_16_0.png)
-
