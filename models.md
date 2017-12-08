@@ -41,21 +41,28 @@ Gradient Boosting - Any deviations in learning rate from 0.1 resulted in horrend
  
  <u> Cross Validation Strategy </u> 
  
- Because we were interested in using past data to predict future data, we couldn't use a simple train-test split.  Instead, we implemented a rolling window cross validation strategy.  This is a time-series modification of leave one out cross validation. In this iterative approach you increase the training set by one year each iteration and your validation window rolls back in time.
- 
- In our context, this would mean training on 2007, validating on 2008-2015 in the first iteration, training on 2007-2008, validating on 2009-2015 in the following iteration and taking the average of the validation window at the end.
- 
- However, since the focus is to predict the most recent year, we modified the rolling window. We restricted the validation set to only be a single year, and it had to be in the range of 2010-2015.  We do this to help simulate our goal which is to use preceeding day to predict the most recent year.
- 
- So, our modified rolling window was:
- Train on 2007-2009 Validate on 2010
- Train on 2008-2010 Validate on 2011
- etc
+Because we were interested in using past data to predict future data, we couldn’t use a simple train-test split. Instead, we implemented a rolling window cross validation strategy. This is a time-series variation of leave one out cross validation. In this iterative approach you increase the training set by one year each iteration and your validation window rolls back in time.
+
+In our context, this would mean training on 2007, validating on 2008-2015 in the first iteration, training on 2007-2008, validating on 2009-2015 in the following iteration and taking the average of each validation error at the end.
+
+However, since our focus is to predict the most recent year, we modified the rolling window. We restricted the validation set to only be a single year, and we set our validation window range to be  2010-2015. We do this to help simulate our goal which is to use preceding data to predict the most recent year.
+
+So, our modified rolling window was: Train on 2007-2009 Validate on 2010 Train on 2008-2010 Validate on 2011 etc
+For model above, we picked the parameter that gave the lowest average validation MSE. We then fit that model on the entire training set and recorded the MSE on the test set predictions.
+
  
  <u> Do early years matter? </u>
  
- Finally, we also wanted to test whether earlier years (ie 2007, 2008) matter when it comes to predicting 2016. So, we ran a loop where increase the first year of training set from 2007 to 2012. Within each loop we found the optimal parameter using rolling window, fitted the model on the restricted training set using that best model and reported test set performance. This allowed us to compare models and see how models may respond to different year ranges when predicting 2016.
+ Finally, we also wanted to test whether earlier years (ie 2007, 2008) matter when it comes to predicting 2016. So, we ran a loop that increased the first year of training each iteration. This table illustrated.
 
+
+|          Iteration          | Training Set Range|
+|--------------------------------|----------------------------------------------------------------------|
+| 1 |2007 - 2015
+| 2 |2008 - 2015
+
+
+Within each loop we found the optimal parameter using rolling window cross validation, fitted the model on the restricted training set year range using that best model and reported test set performance. This allowed us to compare models within each training set range and see how models performed using different training set ranges, which was one of our goals of this project. 
 
 
 
@@ -87,7 +94,7 @@ no_model_vars = ['violent_crime', 'rate_mur_mans', 'rate_violent_crime', 'city_v
 
 
 ```python
-# Test Set will be 2015 and 2016
+# Test Set will be 2016
 final_two = final_df['year'].isin([2016])
 # Need year for indexing but don't put into model
 x_vars = final_df.columns.difference(no_model_vars)
@@ -100,11 +107,6 @@ ytrain = final_df.loc[~final_two, y_var]
 xtest = final_df.loc[final_two, x_vars]
 ytest = final_df.loc[final_two, y_var]
 ```
-
-
-We used a simple modified Nearest Neighbors Approach as a baseline. We wrote a function 
-that calculates the MSE coming from prediction using the kth nearest neighbors in the training set. Since our test data is 2015 and 2016. The kth nearest neighbor prediction will be taking the average of the kth years for each MSA before 2015
-
 
 
 ```python
@@ -179,21 +181,21 @@ def hyper_tuning(model_type, param):
 '''
 Function
 -------------
-rolling_window
-
-This function takes a rolling window where validation window is 2010, then 2011, then 2012 etc and training
-set is all eyars before it It takes in a model type and param list and returns the parameter that gives
-lowest average validation error
-
+Rolling_later
+ 
+This funciton implements a variation on rolling window cross validation. It does cross validation where the validation set is always one year and always between 2010-2015. If provided min_year > 2010, the validation set is always between min_year and 2015 (when training set is 2012-2015 for example)
+ 
 Parameters:
-model_type - "LASSO", "RIDGE", "RF", "GB"
-param_list - list of floats
-xtrain - features
-ytrain - response
+ 
+Model_type (str) - "LASSO", "RIDGE", "RF", "GB"
+param_list - list of floats to feed into model
+xtrain - dataframe or matrix of features
+ytrain - response variable vector
 min_year - first year of training set
 
-Returns parameter that gave lowest mean squared error
+Returns parameter that gave lowest mean squared validation error
 '''
+
 def rolling_later(model_type, param_list, xtrain, ytrain, min_year):
 
     errors = []
@@ -332,6 +334,6 @@ plt.show()
 ```
 
 
-
+** Best Model - Test set performance **
 ![png](models_files/models_16_0.png)
 
