@@ -22,6 +22,8 @@ We created custom tables at the M.S.A level from the census database and extract
 
 * Around 4% of MSA descriptions differed from what we obtained from the FBI Database. These cases were manually updated.  
 
+* One key challenge we identified during our quality check of the code was change in column definitions for Education census table ocer time. The column "no_9th_25_ovr" got renamed in 2010 through 2014. This metadata inconsistency was addressed and corrected in Python.
+
 **Lack of Data for Puerto Rico:**
 
 All the MSAs within Puerto Rico had less than 11 years of crime and census data. 40% of them had only 5 years worth of information. Due to lack of data, we decided to narrow down our prediction scope to continental United States.
