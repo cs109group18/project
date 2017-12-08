@@ -3,7 +3,7 @@ title: Exploratory Data Analysis
 nav_include: 3
 ---
 
-This section describes the findings from the exploratory data analysis phase.
+This section describes the findings from the exploratory data analysis phase. The plots were generated prior to data imputation.  
 
 ### Part 1. Examining Data Completeness by Year###
 
@@ -285,7 +285,7 @@ plt.savefig('State_vs_Avg_Crime_rate', bbox_inches='tight')
 
 **Years**
 
-On an average, all years seem to have a consistent crime rate. Interesting there is not an temporal increasing trend
+On an average, all years seem to have a consistent murder rate. Interesting there is not an temporal increasing trend
 
 
 
