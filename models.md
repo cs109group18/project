@@ -5,41 +5,39 @@ nav_include: 5
 
 ### Model Rationale and Project Trajectory
 
-As elaborated in the introduction, we picked crime data because crime and murder prediction is an important problem to solve. An algorithm that can predict future murder can be a huge asset to state and local governments. Even more than knowing what next year's crime may look like, we wanted to see which variables may help predict murder. By knowing these variables, these actors could take a proactive approach to trying to predict crime.
+As elaborated in the introduction, we picked crime data because crime and murder prediction is an important problem to solve. An algorithm that can predict future murder can be a huge asset to state and local governments.Ultimately, we focused on trying to predict the most recent year, and thus chose 2016 to be our test set.
 
-Ultimately, we focused on trying to predict the most recent year, and thus chose 2016 to be our test set.
-
-Next, we chose models. We decided to cross validate and tune hyper parameters on regression models that we used in this class: Lasso, Ridge, Random Forest, and Graident Boosting. However, we needed a baseline in order to compare it to. 
-
-<u> Features </u>
-
-We decided to use all of the features available. We will let regularization and tree methods select the features that are most important.  The only features that we drop are those that are transformations/related to murder: murder rate, number of violent crimes (murder goes into this), city murder, violent crime rate, and city violent crime.
+Next, we chose models. We decided to cross validate and tune hyper parameters on regression models that we used in this class: **Lasso, Ridge, Random Forest, and Graident Boosting.** However, we needed a baseline for model comparison. 
 
 <u> Baseline </u>
 
-We chose a simple auto-regressive model to service as our baseline. For year t,
+We chose a simple **auto-regressive model** to service as our baseline. For year t,
 
 
  $$ Murder_t = B_0 + B_1 Murder_{t-1} $$
- 
 
-<u> Use of Lags and Feature Selection </u>
 
-We decided to include the previous year's number of murders as a feature. This is standard in time series prediction, but it makes us have to eliminate 2006, so our training set becomes 2007-2015.
+<u> Features </u>
+
+We decided to use all of the features which met the imputation threshold (*see Data Sources Page for details*). This included crime variables, census variables, GDP, one-hot encoded State, MSA and year variables. We will let regularization and tree methods select the features that are most important.  **The only features that we drop are those that are transformations/related to murder: murder rate, number of violent crimes (since it is the sum of murder and all the other crime variables), city murder, violent crime rate, and city violent crime.**
+
+
+<u> Use of Lags</u>
+
+We decided to include the previous year's number of murders as a feature. This is standard in time series prediction, but it makes sense for us to have to eliminate 2006, so our training set becomes 2007-2015.
  
 <u> Metrics </u>
  
-In order to compare models, we need a metric. We decided not to use R<sup>2</sup> after realizing that it was inappropriate. Without any effort, we were getting extremely high R<sup>2</sup> and this is because TSS (Total Sum of Squares Error) will be extremely high as it pulls a mean out of the entire sample which will vary widely by MSA. Instead we chose to compare MSE.
- 
+In order to compare models, we need a metric. We decided not to use R<sup>2</sup> after realizing that it was inappropriate. Without any effort, we were getting extremely high R<sup>2</sup> and this is because TSS (Total Sum of Squares Error) will be extremely high as it pulls a mean out of the entire sample which will vary widely by MSA. Instead we chose to compare MSE. As a result, the ratio of between RSS and TSS will very low and R<sup>2</sup> will be very high. Instead, we chose to compare model performance using mean squared error on the test set. 
  
 <u> Hyper-parameter tuning </u>
  
- Lasso/Ridge - We cross-validated on the regularization parameter. Note that we tried to perform scaling (standardization and normalization) but this resulted in inferior performance. This was due to the fact that distribution on train and test data was not the same.Thus, if you scale on the training set (up to 2015) and apply it to 2016, you can't achieve a 0 mean and 1 standard deviation. As a result we chose not to normalize/standardize.
- 
- Random Forest - We cross-validated on the number of trees
- 
- Gradient Boosting - We fixed learning rate at default of 0.1 and cross validated on the depth of each tree.
- 
+Lasso/Ridge - We cross-validated on the regularization parameter.  Note that we tried to perform scaling (standardization and normalization) but this resulted in inferior performance. This was due to the fact that distribution on train and test data was not the same which was leading to extremely poor performance on the transformed test set, so we chose to cross validate without standardizing/normalizing. However, we recognize that this made interpreting coefficients much more difficult as the features had different scales.
+
+Random Forest - We cross-validated on the number of trees. Additionally, we set the bootstrap parameter false as we did not feel that bootstrapping was valid in the time series context.  Additionally, because we didn’t have a wide variety of features that were correlated with murder, we set max features equal to the number of features. This resulted in more correlated trees, but avoids trees constructed solely with poor features.
+
+Gradient Boosting - Any deviations in learning rate from 0.1 resulted in horrendous performance. So we fixed learning rate and cross validated on the depth of each tree used during boosting.
+
  
  <u> Cross Validation Strategy </u> 
  
