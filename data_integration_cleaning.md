@@ -3,7 +3,7 @@ title: Data Challenges & Merging
 nav_include: 2
 ---
 
-Listed below are the gaps that we've identified in the extracted data, alongside the design decisions we made for re-formatting
+Listed below are the gaps that we've identified in the extracted data, alongside the design decisions we made for data preparation.
 
 **Crime Data (FBI Uniform Crime Reporting Program):**
 
