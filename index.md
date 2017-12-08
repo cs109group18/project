@@ -2,7 +2,7 @@
 title: Murder Prediction
 ---
 
->Building a predictive model to estimate murder in Metropolitan Statistical Areas (MSA’s) within continental United States
+>Building a model to predict murder in Metropolitan Statistical Areas (MSA’s) within continental United States using historical crime data
 
 
 ## Problem Statement & Motivation
