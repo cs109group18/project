@@ -26,5 +26,5 @@ If we had additional time, we would adjust the crime variables using the margin 
 
 We would also like to include additional state-level features, such as average annual temperature, state-level gun restrictions, legalization of marijuana, availability of police stations etc in our study.
 
-We would like to invest more time in the creation of an emsemble prediction model for time series data.
+We would like to invest more time in the creation of an ensemble prediction model for time series data.
 
