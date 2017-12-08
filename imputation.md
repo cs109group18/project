@@ -14,10 +14,10 @@ This equation is what will be used to impute a variable denoted Y<sub>t</sub> fo
 
  $$Y_t = B_0 + B_1 Y_{t-1} + B_2 \frac{Pop_t}{Pop_{t-1}} + B_3 MSA_i $$
  
- We will leverage the variable value from the previous year (if available) and iteratively fill Y<sub>t</sub> until the variable is completely filled. For example - Consider a situation where a variable has missing values for both 2008 and 2009. We first predict the variable value for 2008 using 2007. The imputed value of 2008 is then used to estimate the missing value of 2009. Please note that we also do a population adjustment for growth. 
+ We will leverage the variable value from the previous year (if available) and iteratively fill Y<sub>t</sub> until the variable is completely filled. For example - Consider a situation where a variable has missing values for both 2008 and 2009. We first predict the variable value for 2008 using 2007. The imputed value of 2008 is then used to estimate the missing value of 2009.
  
  
-If the variable has missing values for all past years before year t, we use the observation for the year after t for imputation. We weigh the value using a simple population adjustment:
+If the variable has missing values for all past years before year t, the abovesaid strategy won't work. In such instances, we use the observation for future years (i.e. the years **after** t ) for imputation.
 
  $$Y_t = Y_{t+1} * \frac{Pop_t}{Pop_{t+1}} $$
  
