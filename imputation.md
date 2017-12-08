@@ -30,4 +30,4 @@ In this second approach, we will do simple population adjustment using the neare
 
 ### Imputation of Carson City Data
 
-Carson City MSA was missing crime rate statistics for all years. We used MSA-wide imputation to address this situation. It was also missing employment rate for all 11 years. To solve this scenario, we leveraged the Bureau of Labor Statistics data to manually impute employment rates for all years
+Carson City MSA had no crime data for the largest city in its MSA. But, since Carson city MSA is just Carson city, we used the MSA wide variables as its city-wide crime variables. Additionally, it was missing unemployment data, so we just grabbed annual unemployment data from the Bureau of Labor Statistics and filled the missings with those.
